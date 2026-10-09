@@ -4,23 +4,23 @@ public class Main {
 
         System.out.println("Hello");
 
-        ArithmeticOperation arithmeticOperation1 = new ArithmeticExpression(
+        Calculator calculator1 = new Operation(
                 new Number(3),
                 new Number(5),
-                ExpressionType.ADD);
+                OperationType.ADD);
 
-        ArithmeticOperation arithmeticOperation2 = new ArithmeticExpression(
+        Calculator calculator2 = new Operation(
                 new Number(2),
                 new Number(7),
-                ExpressionType.MULTIPLY);
+                OperationType.MULTIPLY);
 
-        ArithmeticOperation arithmeticOperation3 = new ArithmeticExpression(
-                arithmeticOperation1,
-                arithmeticOperation2,
-                ExpressionType.SUBSTRACT);
+        Calculator calculator3 = new Operation(
+                calculator1,
+                calculator2,
+                OperationType.SUBSTRACT);
 
 
-        System.out.println(arithmeticOperation3.evaluate());
+        System.out.println(calculator3.evaluate());
 
     }
 }

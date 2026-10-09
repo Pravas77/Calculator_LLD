@@ -1,13 +1,12 @@
-public class Number implements ArithmeticOperation{
-    private int value;
+public class Number implements Calculator {
+    private double value;
 
-    public Number(int value) {
+    public Number(double value) {
         this.value = value;
     }
 
-
     @Override
-    public int evaluate() {
+    public double evaluate() {
         return value;
     }
 }
