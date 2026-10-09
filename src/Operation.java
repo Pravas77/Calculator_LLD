@@ -1,11 +1,11 @@
 public class Operation implements Calculator {
-    private final Calculator leftOperation;
-    private final Calculator rightOperation;
+    private final Calculator left;
+    private final Calculator right;
     private final OperationType operationType;
 
-    public Operation(Calculator leftOperation, Calculator rightOperation, OperationType operationType) {
-        this.leftOperation = leftOperation;
-        this.rightOperation = rightOperation;
+    public Operation(Calculator left, Calculator right, OperationType operationType) {
+        this.left = left;
+        this.right = right;
         this.operationType = operationType;
     }
 
@@ -13,10 +13,10 @@ public class Operation implements Calculator {
     @Override
     public double evaluate() {
 
-        if(operationType == OperationType.ADD) return leftOperation.evaluate() + rightOperation.evaluate();
-        else if(operationType == OperationType.SUBSTRACT) return leftOperation.evaluate() - rightOperation.evaluate();
-        else if(operationType == OperationType.MULTIPLY) return leftOperation.evaluate() * rightOperation.evaluate();
-        else if(operationType == OperationType.DIVIDE) return leftOperation.evaluate() / rightOperation.evaluate();
+        if(operationType == OperationType.ADD) return left.evaluate() + right.evaluate();
+        else if(operationType == OperationType.SUBSTRACT) return left.evaluate() - right.evaluate();
+        else if(operationType == OperationType.MULTIPLY) return left.evaluate() * right.evaluate();
+        else if(operationType == OperationType.DIVIDE) return left.evaluate() / right.evaluate();
         else throw new RuntimeException("Invalid input");
 
     }
